@@ -267,6 +267,7 @@ a new betting round will be created*/
 				int playersCurrentContribuion =
 						playerList.get(index).getPotContribution();
 				int costToCall = totalCostToCall - playersCurrentContribuion;
+				System.out.print("Get player " + Integer.toString(index) + "s decision");
 				int playersBet = playerList.get(index).getDecision(getTotalPot(), costToCall, playerList,
 						playersStillToAct-1, betRound, minRaise, myGui);
 				//Records the players actions for this round so that other poker bots have memory of how the player acted in

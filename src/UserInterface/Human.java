@@ -18,14 +18,18 @@ public class Human extends Player{
 	}
 	public int getDecision(int totalPot, int costToCall, ArrayList<Player> playerList,
 			int playersLeftToAct, BettingRound round, int minRaise, HoldemGUI myGui){
+		
+		System.out.print("Get Human Decision");
 		int activePlayers = getActivePlayerCount(playerList);
 		int playerBet;
 		//No decision needs to be made unless there are active players and we are facing a bet
 		if(activePlayers <= 1 && costToCall ==0){
+			System.out.print("\nHuman Line 27");
 			setBettinStatus(BettingStatus.Checked);
 			playerBet= betAdjustedForChipstack(costToCall);
 		}
 		else{
+			System.out.print("\nHuman Line 32");
 			int raiseButtonMin = betAdjustedForChipstack(potContribution + costToCall +
 					minRaise);
 			int raiseButtonMax = raiseButtonMin;
@@ -59,12 +63,13 @@ public class Human extends Player{
 			}
 			myGui.setMinMaxRaise(raiseButtonMin, raiseButtonMax);
 			myGui.setRaiseButton(raiseButtonMin);
-			//myGui.se
-			while(myGui.isCallPressed() ==false && myGui.isFoldPressed() ==false &&
-					myGui.isRaisePressed() == false){
+			
+			while(myGui.isCallPressed == false && myGui.isFoldPressed == false && myGui.raisePressed == false){
 				//Wait until a button is pressed
+				System.out.print(".");
 			}
 			if(myGui.isFoldPressed() == true){
+				System.out.print("\nHuman Line 73");
 				playerBet = 0;
 				setBettinStatus(BettingStatus.Folded);
 				System.out.print("Fold isss pressed");
@@ -82,6 +87,7 @@ public class Human extends Player{
 				setBettinStatus(BettingStatus.Raised);
 				myGui.resetRaiseText();
 			}
+			System.out.print("\nHuman Line 91");
 		}
 		//checks to see if the player has tried to bet more than they can afford
 		playerBet = betAdjustedForChipstack(playerBet);

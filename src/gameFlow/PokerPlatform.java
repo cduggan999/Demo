@@ -82,9 +82,14 @@ public class PokerPlatform {
 			gui.setCallVisibility(false);
 			gui.setRaiseVisibility(false);
 			gui.setContinueVisibility(true);
-			while(gui.isContinuePressed() == false){
-				//infinite loop until continue button is pressed
-			}
+			
+/*
+ ///////////////////Add Continue button option here			
+			
+			 * while(gui.isContinuePressed() == false){ //infinite loop until continue
+			 * button is pressed }
+			 */
+///////////////////////////////////////////////////////////////////////////////////////////////////			
 			gui.setContinueVisibility(false);
 			gui.resetButtons();
 			//handCount++;
