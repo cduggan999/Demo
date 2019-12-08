@@ -12,3 +12,8 @@ feature would needed to allow games to be simulated quickly.
 
 ![GitHub Logo](/images/Screenshot.JPG)
 
+<br>
+<h4>Class Diagram</h4>
+
+![GitHub Logo](/images/holdem_architecture.jpg)
+
