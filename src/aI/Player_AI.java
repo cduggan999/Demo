@@ -5,8 +5,6 @@ import gameFlow.Card;
 import gameFlow.Deck;
 import gameFlow.Hand;
 import gameFlow.Player;
-import gameFlow.PlayerAction;
-import gameFlow.Player.BettingStatus;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
@@ -67,7 +65,6 @@ percentages*/
 		else{
 			int raiseCounter = getRaiseCount(playerList);
 			positonalBonus = getPositionalBonus(playersLeftToAct, round );
-			int noOfPlayers = getActivePlayerCount(playerList);
 			/*We don't want the player calling with speculative hands if there has
 being a raise
 			 * hence the (raiseCounter*5) requirement */
@@ -536,7 +533,7 @@ improve
 		double otherPlayersPenalty = noOfOtherPlayers + playersLeftToAct;
 		double newRaiseRequirement = postFlopRaiseRequirement/otherPlayersPenalty;
 		if(noOfRaises >=2){
-			postFlopRaiseRequirement = postFlopRaiseRequirement/(java.lang.Math.pow(2,
+			postFlopRaiseRequirement = newRaiseRequirement/(java.lang.Math.pow(2,
 					(noOfRaises-1)));
 		}
 		return 1 - postFlopRaiseRequirement;

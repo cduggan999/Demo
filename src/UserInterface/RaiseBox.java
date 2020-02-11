@@ -6,6 +6,7 @@ import javax.swing.event.*;
 import javax.swing.text.*;
 
 public class RaiseBox extends JTextField implements ActionListener, DocumentListener{
+	private static final long serialVersionUID = 1L;
 	static int count = 0;
 	private int maxRaise;
 	private int minRaise;

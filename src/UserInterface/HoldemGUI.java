@@ -93,7 +93,6 @@ public class HoldemGUI implements ActionListener {
 	public void actionPerformed(ActionEvent event){
 		if (event.getSource()== fold){
 			isFoldPressed = true;
-			System.out.print("Fold pressed - HoldemGUI");
 		}
 		if (event.getSource()== call){
 			isCallPressed = true;

@@ -1,9 +1,7 @@
 package aI;
 
 import gameFlow.BettingRound;
-import gameFlow.Hand;
 import gameFlow.Player;
-import gameFlow.Player.BettingStatus;
 import java.util.ArrayList;
 import java.util.Random;
 import scoring.StartingHandsEvaluator;
@@ -17,7 +15,7 @@ public class TightPassive extends Player_AI{
 	protected double positionalAwareness = 0.5;
 	protected double positonalBonus;
 	protected double postFlopCallingRange = 0.15; //calls with top 15% of hands
-	//constuctor
+	// Constructor
 	public TightPassive(String name, int chips){
 		//startingHands = 100, preFlopAgression = 0, positionalAwareness =0
 		super(name, chips);

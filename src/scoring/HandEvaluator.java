@@ -447,12 +447,12 @@ public class HandEvaluator implements Comparable<HandEvaluator>{
 		categoryGap = o.getHandCategory().ordinal() - this.handCategory.ordinal();
 		if (categoryGap == 0){
 			handScoreGap = o.getHandScore() - this.handScore;
-			return (int)handScoreGap; //convert to int so we can return it
+			return (int)handScoreGap; //convert to integer so we can return it
 		}
 		else
 			return categoryGap;
 	}
-	//Returns just the difference in category, doesn't take handscore into account
+	//Returns just the difference in category, doesn't take hand score into account
 	public int compareCategory(HandEvaluator o) {
 		int categoryGap; //the difference between the 2 categories of hands
 		categoryGap = o.getHandCategory().ordinal() - this.handCategory.ordinal();

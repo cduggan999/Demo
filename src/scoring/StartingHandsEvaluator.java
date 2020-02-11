@@ -96,54 +96,8 @@ public class StartingHandsEvaluator {
 		}
 		return handValue;
 	}
-	//Tight aggressive player raise: early >=10, mid >=8, late >=6,
-	private double calculateScoreV2(Card hc1, Card hc2){
-		//Step 1: Score your highest card first
-		double handValue;
-		if(hc1.getRank() == Rank.Ace)
-			handValue = 10;
-		else if(hc1.getRank() == Rank.King)
-			handValue = 8;
-		else if(hc1.getRank() == Rank.Queen)
-			handValue = 7;
-		else if(hc1.getRank() == Rank.Jack)
-			handValue = 6;
-		else{
-			//divide by 2 and add remainder
-			float rankValue = hc1.getRankValue();
-			handValue = rankValue/2;
-		}
-		//Step 2: Multiply pairs by 2 of one card's value
-		if(isPair == true){
-			handValue = handValue*2;
-			//minimum score for a pair is 5
-			if(handValue < 5){
-				handValue = 5;
-			}
-		}
-		//Step 3: Add 1 points if cards are suited.
-		if(isSuited == true){
-			handValue = handValue + 1;
-		}
-		//Step 4: Subtract points if their is a gap between the two cards.
-		if(cardGap == 1){
-			handValue = handValue - 1;
-		}
-		if(cardGap == 2){
-			handValue = handValue - 2;
-		}
-		if(cardGap == 3){
-			handValue = handValue - 4;
-		}
-		if(cardGap >= 4){
-			handValue = handValue - 5;
-		}
-		//Step 5: Add 0.8 points if there is a 0 or 1 card gap and both cards are lower than a Q.
-		if((cardGap == 0 || cardGap == 1) && hc1.getRankValue() < 12){
-			handValue = handValue + 0.8;
-		}
-		return handValue;
-	}
+	
+	// The Chen formula is a system for scoring different starting hands in Texas Hold’em.
 	public int getStartingChenScore(){
 		return chenHandValue;
 	}

@@ -11,6 +11,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 public class RaiseSlider extends JSlider implements ChangeListener{
+	private static final long serialVersionUID = 1L;
 	private int sliderMin;
 	private int sliderMax;
 	private int raiseAmount;
@@ -29,15 +30,15 @@ public class RaiseSlider extends JSlider implements ChangeListener{
 		Font font = new Font("Serif", Font.ITALIC, 15);
 		setFont(font);
 		//Create the label table
-		Hashtable labelTable = new Hashtable();
-		labelTable.put( new Integer( sliderMin ), new JLabel ( "Min " ) );
-		labelTable.put( new Integer( sliderMax ), new JLabel ( "Max " ) );
+		Hashtable<Integer, JLabel> labelTable = new Hashtable<Integer, JLabel>();
+		labelTable.put((int)sliderMin, new JLabel ( "Min " ) );
+		labelTable.put((int)sliderMax, new JLabel ( "Max " ) );
+		
 		setLabelTable( labelTable );
 		setPaintLabels(true);
 	}
 	public void setMinRaise(int min) {
 		this.sliderMin = min;
-		//raiseAmount = min;
 	}
 	public int getMinRaise(){
 		return sliderMin;

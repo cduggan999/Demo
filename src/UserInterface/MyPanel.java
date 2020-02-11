@@ -6,6 +6,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 public class MyPanel extends JPanel {
+	private static final long serialVersionUID = 1L;
 	public MyPanel() {
 		setBorder(BorderFactory.createLineBorder(Color.black));
 		setBackground( new Color(220,200,180) );

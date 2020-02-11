@@ -1,5 +1,7 @@
 package gameFlow;
 
+/*WIP - This function is to help track a players playing history to be used by the AI to help determine their playing style*/
+
 public class PlayerHistory {
 	private int preFlopFoldCount = 0;
 	private int preFlopCheckCount = 0;

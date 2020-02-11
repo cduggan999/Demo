@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import javax.swing.*;
 
 class HoldemCanvas extends JPanel implements ActionListener {
+	private static final long serialVersionUID = 1L;
 	private String holeCard1, holeCard2, p1Card1, p1Card2, p2Card1, p2Card2;
 	private String p3Card1, p3Card2, p4Card1, p4Card2, p5Card1, p5Card2;
 	private String p6Card1, p6Card2, p7Card1, p7Card2, p8Card1, p8Card2;
